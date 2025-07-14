@@ -95,8 +95,8 @@ export async function POST(req: NextRequest) {
       urduTranslation,
       fullBlog: fullText
     })
-  } catch (error: any) {
-    console.error(' ERROR in /api/summarise:', error.message)
-    return NextResponse.json({ error: 'Failed to summarise blog.' }, { status: 500 })
+  } catch (error) {
+    console.error("Route error:", error);
+    return NextResponse.json({ error: "Failed to summarise blog." }, { status: 500 });
   }
 }
